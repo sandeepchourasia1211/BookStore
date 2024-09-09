@@ -1,3 +1,5 @@
+using BookStore.Services;
+
 namespace bookstoremvc
 {
     public class Program
@@ -8,6 +10,7 @@ namespace bookstoremvc
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
+            builder.Services.AddTransient<IBookStoreService,BookStoreService >();
 
             var app = builder.Build();
 
